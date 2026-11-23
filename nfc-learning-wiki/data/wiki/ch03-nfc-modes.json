@@ -1,0 +1,21 @@
+{
+  "article_id":"ch03-nfc-modes",
+  "title":"NFC 運作模式",
+  "chapter":"NFC 運作模式",
+  "summary":"Reader/Writer、Card Emulation 與裝置對裝置交換描述不同互動情境；可用功能依平台而異。",
+  "summary_refs":[{"source_id":"S08","paragraph_id":"p0049-3f564abd29"},{"source_id":"S04","paragraph_id":"p0041-dd943381b2"}],
+  "claims":[
+    {"text":"Android 的 Reader/Writer 模式可讀寫被動式 NFC 標籤與貼紙。","source_refs":[{"source_id":"S08","paragraph_id":"p0051-be9907b3b6"},{"source_id":"S08","paragraph_id":"p0052-d9e433da58"}]},
+    {"text":"在 Card Emulation 情境中，裝置像一張 NFC 卡片，外部 Reader 可以讀取它。","source_refs":[{"source_id":"S08","paragraph_id":"p0053-5f01cd4180"},{"source_id":"S08","paragraph_id":"p0054-d10fe14ce4"},{"source_id":"S08","paragraph_id":"p0055-09dda1ff09"}]},
+    {"text":"Android 4.4 起提供不經 Secure Element 的 Host-based Card Emulation 方式；這是 Android 平台能力說明。","source_refs":[{"source_id":"S04","paragraph_id":"p0041-dd943381b2"},{"source_id":"S04","paragraph_id":"p0042-a3cb05e35a"}]},
+    {"text":"Android NFC 概覽提到小型資料可在兩台 Android 裝置間交換，但這不足以證明所有平台或手機都支援相同的 Peer-to-Peer 功能。","source_refs":[{"source_id":"S08","paragraph_id":"p0039-e25553f552"},{"source_id":"S08","paragraph_id":"p0040-18ee7c6246"}]}
+  ],
+  "source_ids":["S08","S04"],
+  "references":[{"source_id":"S08","paragraph_id":"p0049-3f564abd29"},{"source_id":"S04","paragraph_id":"p0041-dd943381b2"},{"source_id":"S08","paragraph_id":"p0051-be9907b3b6"},{"source_id":"S08","paragraph_id":"p0052-d9e433da58"},{"source_id":"S08","paragraph_id":"p0053-5f01cd4180"},{"source_id":"S08","paragraph_id":"p0054-d10fe14ce4"},{"source_id":"S08","paragraph_id":"p0055-09dda1ff09"},{"source_id":"S04","paragraph_id":"p0042-a3cb05e35a"},{"source_id":"S08","paragraph_id":"p0039-e25553f552"},{"source_id":"S08","paragraph_id":"p0040-18ee7c6246"}],
+  "related_articles":["ch01-nfc-basics","ch04-tags-and-ndef","ch05-nfc-applications"],
+  "updated_at":"2026-11-23T18:00:00+08:00",
+  "validation_status":"passed",
+  "run_id":"assistant-session-nfc-wiki-20261123",
+  "generation_origin":"Codex conversation model; generated from the cited ingested paragraphs, not from the local provider adapter",
+  "validation_method":"Assistant cross-check against the cited Android platform paragraphs plus local citation-ID validation"
+}

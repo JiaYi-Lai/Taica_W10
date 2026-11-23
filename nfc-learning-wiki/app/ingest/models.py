@@ -19,6 +19,7 @@ class Source:
     ingest_status: str = "pending"
     error: str = ""
     raw_path: str = ""
+    metadata_path: str = ""
     cleaned_path: str = ""
 
     @classmethod

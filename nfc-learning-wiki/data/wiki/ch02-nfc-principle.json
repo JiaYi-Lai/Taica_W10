@@ -1,0 +1,22 @@
+{
+  "article_id":"ch02-nfc-principle",
+  "title":"NFC 運作原理",
+  "chapter":"NFC 運作原理",
+  "summary":"NFC 以 13.56 MHz 進行短距離通訊；官方文件對典型連線距離的表述不同，應保留來源語境。",
+  "summary_refs":[{"source_id":"S05","paragraph_id":"p0044-c604cf788c"},{"source_id":"S08","paragraph_id":"p0038-d1d275e2d0"}],
+  "claims":[
+    {"text":"STMicroelectronics 說明 NFC 使用 13.56 MHz，並描述相容裝置可在最遠約 10 公分內通訊。","source_refs":[{"source_id":"S05","paragraph_id":"p0044-c604cf788c"}]},
+    {"text":"Android Developers 說 NFC 通常需要在 4 公分或更近的距離開始連線；這是該文件的概述說法。","source_refs":[{"source_id":"S08","paragraph_id":"p0038-d1d275e2d0"}]},
+    {"text":"不同官方文件對距離的描述數值不同，因此不應把單一距離數字解讀為所有裝置的保證值。","source_refs":[{"source_id":"S05","paragraph_id":"p0044-c604cf788c"},{"source_id":"S08","paragraph_id":"p0038-d1d275e2d0"}]},
+    {"text":"ST 描述 Reader/Writer 發出電磁場，範圍內的裝置偵測後會依協定回傳資料。","source_refs":[{"source_id":"S05","paragraph_id":"p0087-d98a33de45"}]},
+    {"text":"ST 指出 NFC 連線本身不依賴 Wi-Fi、4G 或 LTE。","source_refs":[{"source_id":"S05","paragraph_id":"p0045-52c71d648e"}]}
+  ],
+  "source_ids":["S05","S08"],
+  "references":[{"source_id":"S05","paragraph_id":"p0044-c604cf788c"},{"source_id":"S08","paragraph_id":"p0038-d1d275e2d0"},{"source_id":"S05","paragraph_id":"p0087-d98a33de45"},{"source_id":"S05","paragraph_id":"p0045-52c71d648e"}],
+  "related_articles":["ch01-nfc-basics","ch03-nfc-modes"],
+  "updated_at":"2026-11-23T18:00:00+08:00",
+  "validation_status":"passed",
+  "run_id":"assistant-session-nfc-wiki-20261123",
+  "generation_origin":"Codex conversation model; generated from the cited ingested paragraphs, not from the local provider adapter",
+  "validation_method":"Assistant cross-check against cited source paragraphs plus local citation-ID validation"
+}

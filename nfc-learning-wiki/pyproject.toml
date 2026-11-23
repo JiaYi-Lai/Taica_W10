@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "nfc-learning-wiki"
 version = "0.1.0"
-description = "NFC Technology Learning Wiki source ingestion stage"
+description = "Karpathy-style NFC Learning Wiki with immutable sources and maintained Markdown"
 requires-python = ">=3.11"
 dependencies = []
 

@@ -43,13 +43,14 @@
       "rights_or_access_note": "公開官方開發者文件；保留來源連結，原文僅供本機驗證。",
       "resolved_url": "https://developer.android.com/develop/connectivity/nfc/nfc",
       "content_type": "text/html",
-      "fetched_at": "2026-11-23T08:47:32.248742+00:00",
+      "fetched_at": "2026-11-23T18:18:08.734031+08:00",
       "http_status": 200,
-      "sha256": "7484d9055e264d09519fb69f12197e8bc2e388e48c7a051086e26e2bc0eefcd9",
+      "sha256": "7b43c9e109378ce065d2e3583adbf146d1d4877546e0b051c61b0850b8ee426b",
       "ingest_status": "success",
       "error": "",
-      "raw_path": "data\\raw\\S03.html",
-      "cleaned_path": "data\\cleaned\\S03.json"
+      "raw_path": "data/raw/S03/7b43c9e109378ce065d2e3583adbf146d1d4877546e0b051c61b0850b8ee426b/source.html",
+      "cleaned_path": "data/cleaned/S03/7b43c9e109378ce065d2e3583adbf146d1d4877546e0b051c61b0850b8ee426b.json",
+      "metadata_path": "data/raw/S03/7b43c9e109378ce065d2e3583adbf146d1d4877546e0b051c61b0850b8ee426b/metadata.json"
     },
     {
       "source_id": "S04",
@@ -60,13 +61,14 @@
       "rights_or_access_note": "公開官方開發者文件；保留來源連結，原文僅供本機驗證。",
       "resolved_url": "https://developer.android.com/develop/connectivity/nfc/hce",
       "content_type": "text/html",
-      "fetched_at": "2026-11-23T08:47:33.546834+00:00",
+      "fetched_at": "2026-11-23T18:18:09.962946+08:00",
       "http_status": 200,
-      "sha256": "483608c0f8bdbeed249ccdd259b1e1e440b34eb98d0d14461b10d9771a58f9f7",
+      "sha256": "45220405d81f3fe1251810eaa26700064b18b3e0a178eda32506cfd8146a09c1",
       "ingest_status": "success",
       "error": "",
-      "raw_path": "data\\raw\\S04.html",
-      "cleaned_path": "data\\cleaned\\S04.json"
+      "raw_path": "data/raw/S04/45220405d81f3fe1251810eaa26700064b18b3e0a178eda32506cfd8146a09c1/source.html",
+      "cleaned_path": "data/cleaned/S04/45220405d81f3fe1251810eaa26700064b18b3e0a178eda32506cfd8146a09c1.json",
+      "metadata_path": "data/raw/S04/45220405d81f3fe1251810eaa26700064b18b3e0a178eda32506cfd8146a09c1/metadata.json"
     },
     {
       "source_id": "S05",
@@ -77,13 +79,14 @@
       "rights_or_access_note": "公開官方學習網頁；保留來源連結，原文僅供本機驗證。",
       "resolved_url": "https://www.st.com/content/st_com/en/support/learning/essentials-and-insights/connectivity/nfc.html",
       "content_type": "text/html",
-      "fetched_at": "2026-11-23T08:47:34.166227+00:00",
+      "fetched_at": "2026-11-23T18:18:10.577172+08:00",
       "http_status": 200,
-      "sha256": "e66ff1edabc4f179e85fb2364b8c2d90227811bd6e1379ef668ab804ebcfe1a6",
+      "sha256": "76f1dbac504955c88756972c9dd63b4c34fcdfde5fe88654ec474df726a7762a",
       "ingest_status": "success",
       "error": "",
-      "raw_path": "data\\raw\\S05.html",
-      "cleaned_path": "data\\cleaned\\S05.json"
+      "raw_path": "data/raw/S05/76f1dbac504955c88756972c9dd63b4c34fcdfde5fe88654ec474df726a7762a/source.html",
+      "cleaned_path": "data/cleaned/S05/76f1dbac504955c88756972c9dd63b4c34fcdfde5fe88654ec474df726a7762a.json",
+      "metadata_path": "data/raw/S05/76f1dbac504955c88756972c9dd63b4c34fcdfde5fe88654ec474df726a7762a/metadata.json"
     },
     {
       "source_id": "S06",
@@ -94,13 +97,14 @@
       "rights_or_access_note": "公開官方網頁；保留來源連結，原文僅供本機驗證。",
       "resolved_url": "https://www.emvco.com/emv-technologies/emv-contactless-chip/",
       "content_type": "text/html",
-      "fetched_at": "2026-11-23T08:47:37.956154+00:00",
+      "fetched_at": "2026-11-23T18:18:15.578269+08:00",
       "http_status": 200,
-      "sha256": "45b7a3f6fced2f541b3ac9624cd3729a60fbb9ade843f1697beca6b379c0d0d1",
+      "sha256": "b62441f6eeb003325659fe38e576b6cb9f3fcd6f0ba8613302b3502c5d6b7d44",
       "ingest_status": "success",
       "error": "",
-      "raw_path": "data\\raw\\S06.html",
-      "cleaned_path": "data\\cleaned\\S06.json"
+      "raw_path": "data/raw/S06/b62441f6eeb003325659fe38e576b6cb9f3fcd6f0ba8613302b3502c5d6b7d44/source.html",
+      "cleaned_path": "data/cleaned/S06/b62441f6eeb003325659fe38e576b6cb9f3fcd6f0ba8613302b3502c5d6b7d44.json",
+      "metadata_path": "data/raw/S06/b62441f6eeb003325659fe38e576b6cb9f3fcd6f0ba8613302b3502c5d6b7d44/metadata.json"
     },
     {
       "source_id": "S07",
@@ -111,7 +115,7 @@
       "rights_or_access_note": "公開官方開發者文件；只擷取可公開讀取的正文。",
       "resolved_url": "https://developer.apple.com/documentation/corenfc/",
       "content_type": "text/html",
-      "fetched_at": "2026-11-23T08:47:38.243742+00:00",
+      "fetched_at": "2026-11-23T18:18:16.316339+08:00",
       "http_status": 200,
       "sha256": "efb2cad620b436a25f5812301ed03d235dadefdaf276d840033a88fd68d333d6",
       "ingest_status": "failed",
@@ -128,13 +132,32 @@
       "rights_or_access_note": "公開官方開發者文件；保留來源連結，原文僅供本機驗證。",
       "resolved_url": "https://developer.android.com/develop/connectivity/nfc",
       "content_type": "text/html",
-      "fetched_at": "2026-11-23T08:47:39.240559+00:00",
+      "fetched_at": "2026-11-23T18:18:17.065277+08:00",
       "http_status": 200,
-      "sha256": "871092b2f4a5edbf7561454d1bb7898e2fa47697def5025d6d12c1274fc88e52",
+      "sha256": "9faaf8b8cde913eddabb7fad9e603f593dd1108473d59c332fb9b256b8f0ad73",
       "ingest_status": "success",
       "error": "",
-      "raw_path": "data\\raw\\S08.html",
-      "cleaned_path": "data\\cleaned\\S08.json"
+      "raw_path": "data/raw/S08/9faaf8b8cde913eddabb7fad9e603f593dd1108473d59c332fb9b256b8f0ad73/source.html",
+      "cleaned_path": "data/cleaned/S08/9faaf8b8cde913eddabb7fad9e603f593dd1108473d59c332fb9b256b8f0ad73.json",
+      "metadata_path": "data/raw/S08/9faaf8b8cde913eddabb7fad9e603f593dd1108473d59c332fb9b256b8f0ad73/metadata.json"
+    },
+    {
+      "source_id": "S09",
+      "title": "Insecure machine-to-machine communication setup: NFC risks",
+      "organization": "Android Developers",
+      "original_url": "https://developer.android.com/privacy-and-security/risks/insecure-machine-to-machine",
+      "notes": "官方安全文件：NFC cloned intent-filters 與缺少 NDEF 訊息驗證的風險及緩解方式。",
+      "rights_or_access_note": "公開官方安全文件；保留來源連結，原文僅供本機驗證。",
+      "resolved_url": "https://developer.android.com/privacy-and-security/risks/insecure-machine-to-machine",
+      "content_type": "text/html",
+      "fetched_at": "2026-11-23T18:18:18.285346+08:00",
+      "http_status": 200,
+      "sha256": "4361a4f78beb41ed679fe9ffcf057db02d5da5eb9810dae793d650fdf59d6d9b",
+      "ingest_status": "success",
+      "error": "",
+      "raw_path": "data/raw/S09/4361a4f78beb41ed679fe9ffcf057db02d5da5eb9810dae793d650fdf59d6d9b/source.html",
+      "cleaned_path": "data/cleaned/S09/4361a4f78beb41ed679fe9ffcf057db02d5da5eb9810dae793d650fdf59d6d9b.json",
+      "metadata_path": "data/raw/S09/4361a4f78beb41ed679fe9ffcf057db02d5da5eb9810dae793d650fdf59d6d9b/metadata.json"
     }
   ]
 }

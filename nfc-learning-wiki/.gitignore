@@ -9,3 +9,6 @@ data/cleaned/*
 !data/cleaned/.gitkeep
 data/runs/*
 !data/runs/.gitkeep
+data/index/*.sqlite
+data/index/*.sqlite-shm
+data/index/*.sqlite-wal

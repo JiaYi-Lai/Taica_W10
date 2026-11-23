@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="根據 NFC Wiki 編寫的繁體中文 NFC 入門教學簡報。">
+  <title>NFC 入門｜從輕觸到資料交換</title>
+  <style>
+    :root{color-scheme:dark;--bg:#0b1020;--panel:#121a2e;--ink:#eef3ff;--muted:#a8b4ca;--teal:#6be7d6;--blue:#87a9ff;--gold:#ffd477;--pink:#ff8eb3;--line:#27334b}
+    *{box-sizing:border-box}html,body{margin:0;min-height:100%;background:var(--bg);color:var(--ink);font-family:Inter,"Noto Sans TC","Microsoft JhengHei",system-ui,sans-serif}
+    body{min-height:100vh;display:grid;place-items:center;padding:24px;background:radial-gradient(ellipse at 75% 15%,#17284a 0,transparent 42%),radial-gradient(ellipse at 0 100%,#122a35 0,transparent 36%),var(--bg)}
+    .deck{width:min(1120px,100%);height:min(700px,calc(100vh - 115px));min-height:560px;position:relative}
+    .slide{position:absolute;inset:0;padding:clamp(28px,5vw,68px);display:none;overflow:auto;border:1px solid #2a3853;border-radius:28px;background:linear-gradient(145deg,rgba(20,30,52,.98),rgba(12,19,35,.98));box-shadow:0 30px 90px #0008}
+    .slide.active{display:flex;flex-direction:column;animation:appear .28s ease-out}@keyframes appear{from{opacity:.35;transform:translateY(8px)}to{opacity:1;transform:none}}
+    .eyebrow{color:var(--teal);font-size:.82rem;font-weight:750;letter-spacing:.14em;text-transform:uppercase}.kicker{color:var(--muted);font-size:.94rem}
+    h1,h2,h3,p{margin-top:0}h1{font-size:clamp(2.7rem,7vw,5.8rem);line-height:1.02;max-width:850px;margin:24px 0}h2{font-size:clamp(2rem,4.5vw,3.5rem);line-height:1.08;margin:14px 0 28px}h3{font-size:1.15rem;margin-bottom:10px}p,li{font-size:clamp(1rem,1.65vw,1.3rem);line-height:1.62;color:#d8e1f1}.lead{font-size:clamp(1.25rem,2.1vw,1.72rem);max-width:800px;color:#e7eefb}.muted{color:var(--muted)}.accent{color:var(--teal)}.gold{color:var(--gold)}.pink{color:var(--pink)}
+    .cover{justify-content:center;background:radial-gradient(circle at 80% 50%,#21425a 0,transparent 34%),linear-gradient(145deg,#14223a,#0c1426)}.cover h1 span{color:var(--teal)}.cover-mark{position:absolute;right:9%;top:18%;width:230px;height:230px;border:1px solid #6be7d655;border-radius:50%;display:grid;place-items:center;color:var(--teal);font-size:5rem;box-shadow:0 0 0 25px #6be7d60a,0 0 0 55px #6be7d608}
+    .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}.grid.three{grid-template-columns:repeat(3,minmax(0,1fr))}.card{padding:21px;border:1px solid var(--line);border-radius:18px;background:#ffffff08}.card p,.card li{font-size:1.05rem;margin-bottom:0}.card .big{font-size:2.35rem;font-weight:800;color:var(--teal);line-height:1.1}.tag{display:inline-block;padding:6px 10px;margin:4px 5px 4px 0;border:1px solid #52627f;border-radius:999px;color:#cbd8ee;font-size:.82rem}
+    .flow{display:flex;align-items:stretch;gap:12px;margin:12px 0 20px}.step{flex:1;padding:20px 14px;border-radius:16px;background:#1b2942;text-align:center}.arrow{align-self:center;color:var(--teal);font-size:1.5rem}.number{font-size:.78rem;color:var(--teal);font-weight:800;letter-spacing:.1em}.callout{padding:16px 20px;border-left:4px solid var(--gold);background:#ffd47712;border-radius:0 14px 14px 0;color:#f5e9c9;font-size:1.02rem;line-height:1.55}.compare{display:grid;grid-template-columns:1fr auto 1fr;gap:16px;align-items:center}.compare .versus{font-size:1.4rem;color:var(--muted)}.big-distance{font-size:clamp(2.8rem,6vw,4.8rem);font-weight:850;line-height:1;color:var(--teal)}
+    .source{margin-top:auto;padding-top:18px;border-top:1px solid var(--line);font-size:.78rem;line-height:1.5;color:#a8b4ca}.source strong{color:#c4d1e5}.source a{color:#9fbcff}.footer{position:fixed;bottom:18px;left:50%;transform:translateX(-50%);display:flex;gap:10px;align-items:center;color:var(--muted);font-size:.9rem}.footer button{border:1px solid #52627f;background:#121a2e;color:var(--ink);border-radius:999px;padding:9px 16px;font:inherit;cursor:pointer}.footer button:hover,.footer button:focus-visible{border-color:var(--teal);outline:none}.progress{position:fixed;top:0;left:0;height:3px;background:var(--teal);width:0;transition:width .25s}.refs{display:grid;grid-template-columns:1fr 1fr;gap:10px}.refs li{font-size:.9rem;line-height:1.45}.refs a{color:#a9c3ff;overflow-wrap:anywhere}.small{font-size:.95rem}.checklist{list-style:none;padding:0}.checklist li{padding:8px 0}.checklist li::before{content:"✓";color:var(--teal);font-weight:900;margin-right:12px}
+    @media(max-width:720px){body{padding:12px}.deck{height:calc(100vh - 95px);min-height:500px}.slide{padding:26px 22px;border-radius:20px}.cover-mark{width:100px;height:100px;font-size:2.5rem;right:8%;top:9%}.grid,.grid.three,.refs{grid-template-columns:1fr}.flow{flex-direction:column}.arrow{transform:rotate(90deg)}.compare{grid-template-columns:1fr}.compare .versus{text-align:center}.footer{bottom:10px}.footer button{padding:8px 12px}}
+    @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
+  </style>
+</head>
+<body>
+  <div class="progress" id="progress"></div>
+  <main class="deck" aria-label="NFC 入門簡報">
+    <section class="slide cover active" aria-hidden="false" aria-label="第 1 頁，共 11 頁">
+      <div class="cover-mark" aria-hidden="true">⌁</div>
+      <div class="eyebrow">NFC 入門 · 11 張</div>
+      <h1>從輕觸開始<br><span>認識 NFC</span></h1>
+      <p class="lead">手機碰一下標籤或讀卡機，背後發生了什麼？用簡單例子看懂通訊、標籤、支付與安全。</p>
+      <p class="kicker">以本專案 Wiki 與 6 份成功擷取的官方來源整理</p>
+      <div class="source"><strong>Wiki：</strong>overview.md · <strong>來源：</strong>S03、S04、S05、S06、S08、S09</div>
+    </section>
+
+    <section class="slide" aria-hidden="true" aria-label="第 2 頁，共 11 頁">
+      <div class="eyebrow">01 · NFC 是什麼？</div><h2>讓裝置在近距離交換資料</h2>
+      <p class="lead">NFC 是近距離無線通訊。常見做法是把手機靠近標籤、卡片或讀卡機，交換少量資料或觸發動作。</p>
+      <div class="grid three">
+        <article class="card"><div class="big">13.56</div><p>ST 頁面提到的頻率，單位是 MHz。</p></article>
+        <article class="card"><div class="big">靠近</div><p>常見操作是輕觸或把裝置移到標籤附近。</p></article>
+        <article class="card"><div class="big">多用途</div><p>標籤、交通、付款、分享資訊或配對裝置。</p></article>
+      </div>
+      <div class="source"><strong>Wiki：</strong>concepts/nfc-basics.md · <strong>來源：</strong>S05 p0044、p0064–p0065、p0083</div>
+    </section>
+
+    <section class="slide" aria-hidden="true" aria-label="第 3 頁，共 11 頁">
+      <div class="eyebrow">02 · 距離要看情境</div><h2>兩份官方資料，兩種描述</h2>
+      <div class="compare">
+        <article class="card"><div class="big-distance">最多 10 cm</div><h3>STMicroelectronics</h3><p>概述相容 NFC 裝置之間可通訊的距離。</p></article>
+        <div class="versus">與</div>
+        <article class="card"><div class="big-distance gold">通常 ≤ 4 cm</div><h3>Android Developers</h3><p>描述 Android NFC 啟動連線通常需要的距離。</p></article>
+      </div>
+      <p class="callout">這不是把兩個數字平均。前者說「最遠」，後者說 Android 裝置「通常」啟動連線所需距離；Wiki 保留來源差異，不把任一數字當成所有裝置的保證值。</p>
+      <div class="source"><strong>Wiki：</strong>comparisons/nfc-distance.md · <strong>來源：</strong>S05 p0044；S08 p0037–p0038</div>
+    </section>
+
+    <section class="slide" aria-hidden="true" aria-label="第 4 頁，共 11 頁">
+      <div class="eyebrow">03 · 輕觸標籤</div><h2>一次簡單的讀取流程</h2>
+      <div class="flow">
+        <div class="step"><div class="number">STEP 1</div><h3>手機靠近標籤</h3><p>標籤帶有可供裝置讀取的資料。</p></div><div class="arrow">→</div>
+        <div class="step"><div class="number">STEP 2</div><h3>Android 判讀資料</h3><p>系統分析標籤和資料類型。</p></div><div class="arrow">→</div>
+        <div class="step"><div class="number">STEP 3</div><h3>交給合適的 App</h3><p>例如開啟連結或顯示標籤內容。</p></div>
+      </div>
+      <p>標籤可以觸發手機動作，但後續內容可能仍要透過 Wi-Fi 或行動網路載入。</p>
+      <div class="source"><strong>Wiki：</strong>concepts/ndef-and-tags.md · <strong>來源：</strong>S03 p0041–p0043；S05 p0065</div>
+    </section>
+
+    <section class="slide" aria-hidden="true" aria-label="第 5 頁，共 11 頁">
+      <div class="eyebrow">04 · 資料長什麼樣？</div><h2>NDEF：訊息裡可以有多筆紀錄</h2>
+      <div class="flow">
+        <div class="step"><div class="number">NFC TAG</div><h3>標籤</h3><p>可讀寫能力依標籤型態而異。</p></div><div class="arrow">→</div>
+        <div class="step"><div class="number">NDEF MESSAGE</div><h3>訊息</h3><p>用標準格式包裝資料。</p></div><div class="arrow">→</div>
+        <div class="step"><div class="number">NDEF RECORDS</div><h3>一筆或多筆資料</h3><p>每筆紀錄放一段資料內容。</p></div>
+      </div>
+      <p class="callout">不是每個 NFC 標籤都只有一筆資料，也不是每種標籤都使用 NDEF。Android 文件也提到非 NDEF 標籤需要較底層的處理方式。</p>
+      <div class="source"><strong>Wiki：</strong>concepts/ndef-and-tags.md · <strong>來源：</strong>S03 p0069–p0076；S08 p0041–p0048</div>
+    </section>
+
+    <section class="slide" aria-hidden="true" aria-label="第 6 頁，共 11 頁">
+      <div class="eyebrow">05 · 不同運作方式</div><h2>模式名稱要看平台脈絡</h2>
+      <div class="grid">
+        <article class="card"><h3 class="accent">Reader / Writer</h3><p>Android 裝置讀取或寫入被動 NFC 標籤。</p></article>
+        <article class="card"><h3 class="gold">Card Emulation</h3><p>手機像一張卡片，讓外部讀卡機讀取。</p></article>
+        <article class="card"><h3>其他用途類別</h3><p>ST 頁面還列 Peer-to-Peer 與 Charging 等類別。</p></article>
+        <article class="card"><h3 class="pink">記得分清楚</h3><p>Android 的兩種主要模式，是平台概覽，不是所有 NFC 標準的完整清單。</p></article>
+      </div>
+      <div class="source"><strong>Wiki：</strong>concepts/nfc-operating-modes.md · <strong>來源：</strong>S05 p0067–p0072；S08 p0049–p0054</div>
+    </section>
+
+    <section class="slide" aria-hidden="true" aria-label="第 7 頁，共 11 頁">
+      <div class="eyebrow">06 · 手機也能像卡片</div><h2>Android 卡片模擬有不同資料路徑</h2>
+      <div class="grid">
+        <article class="card"><span class="tag">Secure Element</span><h3>安全元件路徑</h3><p>Android 文件描述讀卡機資料可直接被路由到安全元件，由它和終端通訊。</p></article>
+        <article class="card"><span class="tag">HCE</span><h3>主機卡片模擬</h3><p>資料改送到手機主機 CPU，由 Android 應用服務處理。</p></article>
+      </div>
+      <p class="callout">兩者是 Android 文件中的技術路徑差異。只知道資料去哪裡，還不足以判定一種支付方案整體上比較安全。</p>
+      <div class="source"><strong>Wiki：</strong>concepts/hce-and-secure-element.md · <strong>來源：</strong>S04 p0048–p0060、p0075–p0076</div>
+    </section>
+
+    <section class="slide" aria-hidden="true" aria-label="第 8 頁，共 11 頁">
+      <div class="eyebrow">07 · 手機付款</div><h2>NFC 通訊與 EMV 支付規格</h2>
+      <div class="grid">
+        <article class="card"><div class="number">通訊層</div><h3 class="accent">NFC</h3><p>讓手機或感應式卡片靠近收款終端時交換資料。</p></article>
+        <article class="card"><div class="number">支付層</div><h3 class="gold">EMV Contactless</h3><p>EMVCo 描述支付產品與收款終端如何依規格處理交易。</p></article>
+      </div>
+      <p class="lead">兩者會一起出現在感應式支付，但代表不同責任。EMVCo 提到的交易安全碼，是其支付脈絡中的說明，不能套用到所有 NFC 使用方式。</p>
+      <div class="source"><strong>Wiki：</strong>concepts/nfc-and-contactless-payments.md · <strong>來源：</strong>S05 p0083；S06 p0064–p0065</div>
+    </section>
+
+    <section class="slide" aria-hidden="true" aria-label="第 9 頁，共 11 頁">
+      <div class="eyebrow">08 · 使用資料要小心</div><h2>標籤內容不能直接當成可信指令</h2>
+      <div class="grid">
+        <article class="card"><h3 class="pink">可能風險</h3><p>Android 文件提到相似的 intent filter 可能讓惡意 App 試圖接收標籤資料。</p></article>
+        <article class="card"><h3 class="accent">基本防護</h3><p>開發者應檢查 NDEF 資料格式和內容，再交給其他 App 元件處理。</p></article>
+      </div>
+      <p class="callout">這份來源談的是 Android 應用程式的風險和防護，不表示每個 NFC 標籤都有問題，也不代表 NFC 本身提供完整安全保證。</p>
+      <div class="source"><strong>Wiki：</strong>concepts/nfc-security.md · <strong>來源：</strong>S09 p0247–p0261、p0271–p0278</div>
+    </section>
+
+    <section class="slide" aria-hidden="true" aria-label="第 10 頁，共 11 頁">
+      <div class="eyebrow">09 · 一分鐘複習</div><h2>記住這四件事</h2>
+      <ul class="checklist">
+        <li>NFC 是近距離通訊，常用「輕觸」來開始互動。</li>
+        <li>標籤可能用 NDEF 訊息保存一筆或多筆資料。</li>
+        <li>Reader/Writer、Card Emulation 和 HCE 要分清楚平台情境。</li>
+        <li>付款規格、手機支援與資料安全是相關但不同的問題。</li>
+      </ul>
+      <div class="card"><h3>想一想</h3><p>如果手機掃描到一個標籤，為什麼不能直接假設它的資料安全又可信？</p></div>
+      <div class="source"><strong>Wiki：</strong>overview.md、concepts/nfc-basics.md、ndef-and-tags.md、nfc-operating-modes.md、nfc-security.md · <strong>來源：</strong>S03、S04、S05、S06、S08、S09</div>
+    </section>
+
+    <section class="slide" aria-hidden="true" aria-label="第 11 頁，共 11 頁">
+      <div class="eyebrow">參考資料 · Wiki 溯源</div><h2>每個重點都可以回到來源</h2>
+      <ol class="refs">
+        <li><strong>S03 · Android NFC basics</strong><br><a href="https://developer.android.com/develop/connectivity/nfc/nfc">developer.android.com/develop/connectivity/nfc/nfc</a></li>
+        <li><strong>S04 · Android HCE</strong><br><a href="https://developer.android.com/develop/connectivity/nfc/hce">developer.android.com/develop/connectivity/nfc/hce</a></li>
+        <li><strong>S05 · STMicroelectronics NFC Technology</strong><br><a href="https://www.st.com/content/st_com/en/support/learning/essentials-and-insights/connectivity/nfc.html">st.com · NFC Technology</a></li>
+        <li><strong>S06 · EMVCo Contactless Chip</strong><br><a href="https://www.emvco.com/emv-technologies/emv-contactless-chip/">emvco.com · Contactless Chip</a></li>
+        <li><strong>S08 · Android NFC overview</strong><br><a href="https://developer.android.com/develop/connectivity/nfc">developer.android.com/develop/connectivity/nfc</a></li>
+        <li><strong>S09 · Android NFC security risks</strong><br><a href="https://developer.android.com/privacy-and-security/risks/insecure-machine-to-machine">developer.android.com · security risks</a></li>
+      </ol>
+      <p class="small muted">本簡報由已整合的 Markdown Wiki 摘要而成。完整來源段落 ID 請見各 Wiki 頁和 `data/cleaned/` 快照。</p>
+      <div class="source"><strong>Wiki：</strong>wiki/index.md · <strong>來源：</strong>S03、S04、S05、S06、S08、S09；完整 paragraph ID 見各 Wiki 頁面</div>
+    </section>
+  </main>
+  <nav class="footer" aria-label="簡報控制">
+    <button id="prev" type="button" aria-label="上一頁">← 上一頁</button>
+    <span id="counter" aria-live="polite">1 / 11</span>
+    <button id="next" type="button" aria-label="下一頁">下一頁 →</button>
+  </nav>
+  <script>
+    (()=>{const slides=[...document.querySelectorAll('.slide')],counter=document.getElementById('counter'),progress=document.getElementById('progress');let current=0;
+      function show(index){current=(index+slides.length)%slides.length;slides.forEach((slide,i)=>{const active=i===current;slide.classList.toggle('active',active);slide.setAttribute('aria-hidden',String(!active));slide.setAttribute('aria-label',`第 ${i+1} 頁，共 ${slides.length} 頁`)});counter.textContent=`${current+1} / ${slides.length}`;progress.style.width=`${((current+1)/slides.length)*100}%`;document.getElementById('prev').disabled=current===0;document.getElementById('next').disabled=current===slides.length-1}
+      document.getElementById('prev').addEventListener('click',()=>show(Math.max(0,current-1)));document.getElementById('next').addEventListener('click',()=>show(Math.min(slides.length-1,current+1)));document.addEventListener('keydown',event=>{if(['ArrowRight','PageDown',' '].includes(event.key)){event.preventDefault();show(Math.min(slides.length-1,current+1))}else if(['ArrowLeft','PageUp'].includes(event.key)){event.preventDefault();show(Math.max(0,current-1))}else if(event.key==='Home'){show(0)}else if(event.key==='End'){show(slides.length-1)}});show(0)})();
+  </script>
+</body>
+</html>

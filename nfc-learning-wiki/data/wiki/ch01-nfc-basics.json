@@ -1,0 +1,20 @@
+{
+  "article_id": "ch01-nfc-basics",
+  "title": "NFC 基礎概念",
+  "chapter": "NFC 基礎概念",
+  "summary": "NFC 是讓近距離裝置交換少量資料或啟動服務的無線通訊方式，常見體驗是感應一下。",
+  "summary_refs": [{"source_id":"S05","paragraph_id":"p0082-b472ae801b"}],
+  "claims": [
+    {"text":"NFC（Near Field Communication）是一種讓相距幾公分的裝置連線的無線技術。","source_refs":[{"source_id":"S05","paragraph_id":"p0082-b472ae801b"}]},
+    {"text":"STMicroelectronics 說明，RFID 用於偵測與傳遞資料，NFC Forum 的協定讓裝置依共同規則通訊。","source_refs":[{"source_id":"S05","paragraph_id":"p0082-b472ae801b"},{"source_id":"S05","paragraph_id":"p0085-47ad638730"}]},
+    {"text":"NFC 的常見互動是輕觸或靠近，不需手動配對；用途包括付款、分享聯絡資訊或連結、交通、配對耳機與分享檔案。","source_refs":[{"source_id":"S05","paragraph_id":"p0083-af3c385e28"}]}
+  ],
+  "source_ids": ["S05"],
+  "references": [{"source_id":"S05","paragraph_id":"p0082-b472ae801b"},{"source_id":"S05","paragraph_id":"p0083-af3c385e28"},{"source_id":"S05","paragraph_id":"p0085-47ad638730"}],
+  "related_articles": ["ch02-nfc-principle","ch05-nfc-applications"],
+  "updated_at": "2026-11-23T18:00:00+08:00",
+  "validation_status": "passed",
+  "run_id": "assistant-session-nfc-wiki-20261123",
+  "generation_origin": "Codex conversation model; generated from the cited ingested paragraphs, not from the local provider adapter",
+  "validation_method": "Assistant cross-check against cited source paragraphs plus local citation-ID validation"
+}
